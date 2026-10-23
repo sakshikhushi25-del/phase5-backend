@@ -8,7 +8,6 @@ dotenv.config();
 
 const app = express();
 
-// CORS configuration
 const allowedOrigins = [
     "https://phase5-frontend-peach.vercel.app",
     "http://127.0.0.1:5500",
@@ -23,7 +22,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// Explicitly handle preflight requests for /ask
 app.options("/ask", cors(corsOptions));
 
 app.use(express.json());
@@ -102,7 +100,6 @@ app.post("/ask", async (req, res) => {
 
 export default app;
 
-// Start the server locally, not in Vercel production
 if (process.env.NODE_ENV !== "production") {
     const PORT = process.env.PORT || 3000;
 
