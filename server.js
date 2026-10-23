@@ -77,7 +77,7 @@ app.post("/ask", async (req, res) => {
 });
 export default app;
 
-if(process.env.NODE_ENV !== "production") {
+if(process.env.NODE_ENV == "production") {
     app.listen(3000, () => {
         console.log("Server is running");
     });
